@@ -1,35 +1,267 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.row {
+    margin-right: 0px; /*this was causing an issue with oveflow for some reason :/ */
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.sticky {
+    position: webkit sticky;
+    position: sticky;
+    top: 6em;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.float-item {
+    box-shadow: #70676748 10px 10px 10px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    .float-item:hover {
+        box-shadow: #24242467 5px 5px 5px;
+        width: calc(100% - .2%);
     }
+
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+/*typography*/
+h1 {
+    font-size: 2.5vw;
+}
+
+
+/*-----utility-----*/
+.sm-thumb {
+    width: 4em;
+    height: 4em;
+    background-color: #505050;
+    margin: 0px !important;
+}
+
+.float-center {
+    margin: 0 auto;
+}
+
+
+/*button classes*/
+.btn-lg {
+    width: auto;
+    display: block;
+    padding: 15px 25px;
+    border-radius: 100px 100px;
+    border: none;
+}
+
+.btn-blue {
+    background-color: #6AB8D3;
+}
+
+.btn-yellow {
+    background-color: #EDE669;
+    border: solid 4px #ffffff;
+}
+
+.btn-lg > a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.btn-blue:hover {
+    background-color: rgb(93, 163, 187);
+}
+
+.mt-heavy {
+    margin-top: 4em;
+}
+
+.lg-list {
+    list-style-type: none;
+    margin: 2vw auto 0 auto;
+    width: 45vw;
+}
+
+    .lg-list .lg-list-desc {
+        width: 70%;
+        margin: 0px !important;
+    }
+
+
+
+    .lg-list > li {
+        width: 100%;
+        margin: 1em auto;
+        padding: .5em 1.5em .5em 1.5em;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+        /* .lg-list>li:hover{
+    box-shadow: #24242467 5px 5px 5px;
+    width: 44.7vw;
+} */
+
+        .lg-list > li > a {
+            text-decoration: none;
+            color: black;
+        }
+
+.sm-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 2em;
+}
+
+    .sm-list > li {
+        width: 100%;
+        margin: 1em auto;
+        padding: .5em 1.5em .5em 1.5em;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+/*-----Navigation----*/
+.navi {
+    padding: 0;
+}
+
+    .navi .navi-contain {
+        margin: 6% 10%;
+    }
+
+        .navi .navi-contain .heading {
+            font-weight: 700;
+            color: #505050;
+        }
+
+        .navi .navi-contain .navi-text { /*navigation text*/
+            font-size: 1.2vw;
+            font-weight: 400;
+            color: #505050;
+            margin-top: 1.5em;
+            width: 90%;
+        }
+
+        .navi .navi-contain > .social {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 2em;
+            margin-top: 2em;
+        }
+
+            .navi .navi-contain > .social > li {
+                float: left;
+                margin-right: 20px;
+            }
+
+/*contact*/
+.contact {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #50505060
+}
+
+.contact-modal {
+    background-color: white;
+    margin: 5% auto;
+    width: 50em;
+    height: 30em;
+    padding: 5em;
+    border-radius: 10px;
+}
+
+    .contact-modal > #contact-close {
+        position: static;
+        top: 0;
+    }
+
+
+
+/*-----listview-----*/
+.lv-contain {
+    background-color: lightblue;
+    padding: 0;
+}
+
+.listview {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .listview > li {
+        background-color: lightgreen;
+        padding: 5%;
+        width: 100%;
+    }
+
+/*forms*/
+.sm-form {
+    width: 90%;
+    margin: auto;
+}
+
+/*Game Board*/
+.game-board {
+    width: 400px;
+    height: 400px;
+    background-color: #34495e;
+    color: #fff;
+    border: 6px solid #2c3e50;
+    border-radius: 10px;
+    padding: 0px;
+    box-shadow: 3px 3px 10px #2c3e50;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+    .game-board .box {
+        border: 6px solid #2c3e50;
+        border-radius: 2px;
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .game-board .box:hover {
+            background-color: #3d566e;
+        }
+
+#winBanner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+/*Info Box*/
+.infoBox {
+    width: 10em;
+    float: right;
+    height: 20em;
+    background-color: #faf8f8;
+    margin-left: 2em;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+}
+
+
+/*main content*/
+.main {
+    background-color: rgb(90, 231, 231);
 }
